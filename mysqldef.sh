@@ -1,8 +1,9 @@
 #!/bin/bash -e
 
 SWD=$(cd $(dirname $0); pwd)
-[ ! -f $SWD/setenv-mysql.sh ] || . $SWD/setenv-mysql.sh
 [ ! -f $SWD/setenv-mysqldef.sh ] || . $SWD/setenv-mysqldef.sh
+[ ! -f $SWD/setenv-mysql.sh ] || . $SWD/setenv-mysql.sh
+[ ! -f setenv-mysql.sh ] || . setenv-mysql.sh
 
 MISSING=()
 for var in MYSQL_HOSTNAME MYSQL_USERNAME MYSQL_PASSWORD MYSQL_DB; do

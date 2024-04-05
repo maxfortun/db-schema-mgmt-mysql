@@ -1,0 +1,4 @@
+MYSQL_HOSTNAME=localhost
+MYSQL_USERNAME=testuser
+MYSQL_PASSWORD=testpass
+MYSQL_DB=testdb
