@@ -1,0 +1,4 @@
+SQLDEF_REPO=maxfortun
+SQLDEF_NAME=sqldef
+SQLDEF_VERSION=latest
+
