@@ -6,7 +6,7 @@ SWD=$(cd $(dirname $0); pwd)
 [ ! -f setenv-mysql.sh ] || . setenv-mysql.sh
 
 MISSING=()
-for var in MYSQL_HOSTNAME MYSQL_USERNAME MYSQL_PASSWORD MYSQL_DB; do
+for var in MYSQL_HOSTNAME MYSQL_USER MYSQL_PASSWORD MYSQL_DATABASE; do
 	val=${!var}
 	[ -z "$val" ] || continue
 	MISSING+=( $var )
@@ -18,5 +18,5 @@ if [ -n "${MISSING[*]}" ]; then
 	exit 1
 fi
 
-docker run -i --rm --name $SQLDEF_NAME $SQLDEF_REPO/$SQLDEF_NAME:$SQLDEF_VERSION mysqldef -h$MYSQL_HOSTNAME -u$MYSQL_USERNAME -p$MYSQL_PASSWORD $MYSQL_DB "$@"
+docker run -i --rm --name $SQLDEF_NAME $SQLDEF_REPO/$SQLDEF_NAME:$SQLDEF_VERSION mysqldef -h$MYSQL_HOSTNAME -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE "$@"
 
