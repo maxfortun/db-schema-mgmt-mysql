@@ -12,8 +12,8 @@ fi
 SWD=$(cd $(dirname $0); pwd)
 
 function restore_head {
-	git checkout HEAD $file >&2
-	git stash pop >&2
+	git checkout HEAD $file >&2 
+	git stash pop >&2 || true
 }
 
 if [ -n "$release" ]; then
