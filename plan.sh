@@ -13,10 +13,12 @@ SWD=$(cd $(dirname $0); pwd)
 
 function restore_head {
 	git checkout HEAD $file
+	git stash pop
 }
 
 if [ -n "$release" ]; then
 	trap restore_head EXIT
+	git stash
 	git checkout $release $file
 fi
 
