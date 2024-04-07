@@ -12,14 +12,14 @@ fi
 SWD=$(cd $(dirname $0); pwd)
 
 function restore_head {
-	git checkout HEAD $file
-	git stash pop
+	git checkout HEAD $file >&2
+	git stash pop >&2
 }
 
 if [ -n "$release" ]; then
 	trap restore_head EXIT
-	git stash
-	git checkout $release $file
+	git stash >&2
+	git checkout $release $file >&2
 fi
 
 $SWD/mysqldef.sh --dry-run < $file 
