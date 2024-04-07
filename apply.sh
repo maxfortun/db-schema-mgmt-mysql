@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 file=$1
 release=$2
@@ -10,6 +10,8 @@ if [ -z "$file" ]; then
 fi
 
 SWD=$(cd $(dirname $0); pwd)
+fdir=$(dirname $file)
+file=$fdir/$(basename $file)
 
 $SWD/plan.sh $file $release > $file.changes
 if grep "Nothing is modified" $file.changes >&2; then

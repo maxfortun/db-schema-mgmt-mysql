@@ -17,8 +17,11 @@ if [ -n "${MISSING[*]}" ]; then
 	exit 1
 fi
 
-DOCKER_RUN_ARGS=( -it )
+DOCKER_RUN_ARGS=( -i )
 DOCKER_RUN_ARGS+=( --rm )
 
-docker run "${DOCKER_RUN_ARGS[@]}" mysql:latest mysql --protocol=TCP -h$MYSQL_HOSTNAME -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE "$@"
+if [[ -t 0 ]]; then
+	DOCKER_RUN_ARGS+=( -t )
+fi
 
+docker run "${DOCKER_RUN_ARGS[@]}" mysql:latest mysql --protocol=TCP -h$MYSQL_HOSTNAME -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE "$@"
