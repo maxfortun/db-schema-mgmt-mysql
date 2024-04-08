@@ -2,7 +2,7 @@
 Schema Management for MySQL
 
 ## Feature branching and release cycle
-### Schema release git workflow
+### Branch-to-environment release git workflow
 > Based on [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with one major difference.  
 > GitFlow starts releases from `develop` branch.  
 > We start releases from `master` branch.
