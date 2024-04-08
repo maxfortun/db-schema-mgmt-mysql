@@ -1,8 +1,6 @@
 # db-schema-mgmt-mysql
 Schema Management for MySQL
 
-```
-
 ## Feature branching and release cycle
 ### Schema release git workflow
 > Based on [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with one major difference.  
