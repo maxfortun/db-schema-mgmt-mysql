@@ -1,6 +1,15 @@
 # db-schema-mgmt-mysql
 Schema Management for MySQL
 
+## Premise
+Databases are `storage class` applications, and unlike `compute class`, which, today, is designed to be mostly stateless, databases have persistent state - their data. This data is usually important and we do not want to lose it. When we change the `compute class` apps we can easily destroy and recreate them. Or better yet, create new versions of them first, seamlessly switch to the new versions, then destroy the old ones. When we change the `storage class` apps we take great care not to destroy the data itself. In case of databases there are two types of data. Data that we store, and [data definition](https://en.wikipedia.org/wiki/Data_definition_language), which defines what data that we store looks like. Also known as [schema](https://en.wikipedia.org/wiki/Database_schema). When we change the schema, we do not drop and recreate schema, like we do with `compute class` apps. This would be a lossy operation. What we usually do is [evolve](https://en.wikipedia.org/wiki/Evolutionary_database_design) the schema incrementally without affecting existing data. This puts us directly at our final `desired state`. But what we miss in the process is a trackable `desired state` management. There is no audit trail, no versioning, no predictable and consistent means to deploy the same change across multiple environments and keep these environments in sync. This void is what I am trying to address with the propsed approach.   
+
+## Wishes
+* Develop changes
+* Identify changes
+* Deploy changes
+* Rollback changes 
+
 ## Feature branching and release cycle
 ### Branch-to-environment release git workflow
 > Based on [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with one major difference.  
