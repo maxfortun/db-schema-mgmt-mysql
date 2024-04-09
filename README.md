@@ -15,10 +15,10 @@ Databases are `storage class` applications, and, unlike `compute class` applicat
 ### Environment Branches Flow git workflow
 > Based on [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with one major difference.  
 > GitFlow starts releases from `develop` branch.  
-> We start releases from `master` branch.
+> We start releases from `main` branch.
 <img src="EBFlow.svg" width="600" />
 
-1. Create a `feature` branch from `master`.
+1. Create a `feature` branch from `main`.
 2. Make changes and test them locally.
 3. Commit and push changes into the `feature` branch.
 4. Merge `feature` branch into the `dev` branch.
@@ -29,8 +29,8 @@ Databases are `storage class` applications, and, unlike `compute class` applicat
 8. Deploy `int` branch into the `Int` environment.
 > Via CI/CD
 9. Test the `Int` environment.
-10. Merge `feature` branch into the `master` branch.
-11. Tag `master` branch with a version.
+10. Merge `feature` branch into the `main` branch.
+11. Tag `main` branch with a version.
 12. Deploy the `tag` into the `Prod` environment.
 > Via CI/CD
 
