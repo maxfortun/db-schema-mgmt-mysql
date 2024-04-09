@@ -12,11 +12,11 @@ Databases are `storage class` applications, and, unlike `compute class` applicat
 ### Rollback changes 
 
 ## Feature branching and release cycle
-### Branch-to-environment release git workflow
+### Environment Branches Flow git workflow
 > Based on [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) with one major difference.  
 > GitFlow starts releases from `develop` branch.  
 > We start releases from `master` branch.
-<img src="B2EFlow.svg" width="600" />
+<img src="EBFlow.svg" width="600" />
 
 1. Create a `feature` branch from `master`.
 2. Make changes and test them locally.
